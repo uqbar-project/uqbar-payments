@@ -3,7 +3,7 @@ function infoBotonesDonaciones(){
 	$valores = array(50,100,150,200);
 	$ret = array();
 
-//	if(!isLogged()){
+	if(!isLogged()){
 		foreach($valores as $valor){
 			$ret[$valor] = array();
 			$ret[$valor]["url"] = "login.php";
@@ -11,37 +11,39 @@ function infoBotonesDonaciones(){
 		}
 		
 		return $ret;
-//	}
-	
+	}else{
+		foreach($valores as $valor){
+			$ret[$valor] = array();
+			$ret[$valor]["url"] = "donar.php?valor=$valor";
+			$ret[$valor]["texto"] = "Donar";
+		}
+		
+		return $ret;
+	}
+}
+
+function doDonar($valor){
 	$mp = new MP(MP_CLIENT, MP_SECRET);
-	
 	
 	$datetime = new DateTime('tomorrow');
 	$today = $datetime->format("Y-m-d\TH:i:s.000P");
 	
+	$preapproval_data= array(
+			"back_url" => BACK_URL,
+			"reason" => "Donación Mensual $ $valor a Uqbar Project",
+			"external_reference" => "MEN-$valor",
+			"payer_email" => email(),
+			"auto_recurring" => array(
+					"frequency" => 1,
+					"frequency_type" => "months",
+					"transaction_amount" => $valor,
+					"currency_id" => "ARS",
+					"start_date" => $today
+			)
+	);
 	
-	foreach($valores as $valor){
-		$preapproval_data= array(
-				"back_url" => BACK_URL,
-				"reason" => "Donación Mensual $ $valor a Uqbar Project",
-				"external_reference" => "MEN-$valor",
-				"payer_email" => "ptesone@uno.edu.ar",
-				"auto_recurring" => array(
-						"frequency" => 1,
-						"frequency_type" => "months",
-						"transaction_amount" => $valor,
-						"currency_id" => "ARS",
-						"start_date" => $today
-				)
-		);
-	
-		$ret[$valor] = array();
-		$ret[$valor]["obj"] = $mp->create_preapproval_payment ($preapproval_data);
-		$ret[$valor]["url"] = $ret[$valor]["obj"]['response']['init_point'];
-		$ret[$valor]["texto"] = "Donar";
-	}
-	
-	return $ret;
+	$redirect = $mp->create_preapproval_payment ($preapproval_data)['response']['init_point'];
+	return header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
 function renderBotonesDonaciones(){

@@ -52,3 +52,8 @@ function userInfo(){
 function displayName(){
 	return userInfo()['displayName'];
 } 
+
+function email(){
+	global $token_data;
+	return $token_data['payload']['email'];
+}

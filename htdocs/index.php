@@ -9,7 +9,7 @@
         <p>
         	Dentro de Uqbar se realizan muchas actividades y proyectos de desarrollo, pero para poder realizar esto necesitamos
         	de tu colaboración </p>
-        <p><a class="btn btn-primary btn-lg" href="http://uqbar.org" role="button">Ver más</a></p>
+        <p><a class="btn btn-primary" href="http://uqbar.org" role="button">Ver más</a></p>
       </div>
     </div>
 

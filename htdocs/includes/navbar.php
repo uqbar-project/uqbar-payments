@@ -26,7 +26,7 @@
 ?>		
 		<div id="navbar" class="navbar-collapse collapse">
 			<a class="btn navbar-btn btn-success navbar-right" href="login.php"
-				role="button">Ingresar</a>
+				role="button">Ingresar con tu Usuario de Google</a>
 		</div>
 <?php 
 	}
