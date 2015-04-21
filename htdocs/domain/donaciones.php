@@ -41,8 +41,9 @@ function doDonar($valor){
 					"start_date" => $today
 			)
 	);
-	
-	$redirect = $mp->create_preapproval_payment ($preapproval_data)['response']['init_point'];
+	$resp = $mp->create_preapproval_payment ($preapproval_data);
+	$resp2 = $resp['response'];
+	$redirect = $resp2['init_point'];
 	header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 

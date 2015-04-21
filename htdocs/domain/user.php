@@ -71,7 +71,8 @@ function userInfo(){
 }
 
 function displayName(){
-	return userInfo()['displayName'];
+	$u = userInfo();
+	return $u['displayName'];
 } 
 
 function email(){
