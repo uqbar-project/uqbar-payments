@@ -16,7 +16,7 @@
 			<p>Tenemos distintas opciones de colaboraciones mensuales con las que
 				nos podes ayudar. Todas expresadas en pesos argentinos, por ahora
 				solo recibimos donaciones dentro de Argentina.</p>
-			<p>Para que puedas realizar la donación debes estar logeado.</p>
+			<p>Para que puedas realizar la donación debes estar logueado, ya que el servicio de pagos necesita un e-mail.</p>
 			<p>
 			<?= renderBotonesDonaciones() ?>
 		</div>

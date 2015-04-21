@@ -22,19 +22,19 @@ class Conexion {
 	public function abrir() {
 		if ($this->estaAbierta()) return;
 		if (!$this->conn = @mysql_pconnect($this->servidor.':'.$this->puerto, $this->usuario, $this->clave)){
-			throw new ConexionException(MensajesBD::errorAlConectar(mysql_error()));
+			throw new ConexionException(mysql_error());
 		}
 		// Hack para solucionar el problema del Warning:  mysql_pconnect(): MySQL server has gone away
 		if (!mysql_ping( $this->conn ) ) {
 			if (!$this->conn = mysql_pconnect($this->servidor.':'.$this->puerto, $this->usuario, $this->clave)){
-			throw new ConexionException(MensajesBD::errorAlConectar(mysql_error()));
+			throw new ConexionException(mysql_error());
 			}
 		}
 		if (!mysql_select_db($this->db)){
-			throw new ConexionException(MensajesBD::errorSeleccionarBD(mysql_error()));
+			throw new ConexionException(mysql_error());
 		}
 		if (!mysql_query("BEGIN", $this->conn)){
-			throw new ConexionException(MensajesBD::errorTransaccion(mysql_error()));
+			throw new ConexionException(mysql_error());
 		}
 		mysql_set_charset('utf8',$this->conn);
 	}
@@ -47,7 +47,7 @@ class Conexion {
 		if ($this->estaAbierta()){
 			$this->endTransaction();
 			if (!mysql_query("BEGIN", $this->conn)){
-				throw new ConexionException(MensajesBD::errorTransaccion(mysql_error()));
+				throw new ConexionException(mysql_error());
 			}
 		} else {
 			$this->abrir();
@@ -59,16 +59,8 @@ class Conexion {
 			$this->abrir();
 		}
 		
-		// Si empieza con preproduccion, es alguna de sus variantes
-		if (0 === strpos(SISTEMA, 'preproduccion')) {
-			set_time_limit ( 0 );
-		}
-
-		if(SISTEMA != "produccion")
-		    error_log($sql);
-
 		if(!$resultado = mysql_query($sql , $this->conn)){
-			throw new ConexionException(MensajesBD::errorAlConsultar($sql . mysql_error()));
+			throw new ConexionException($sql . mysql_error());
 		}
 
 		if ($coleccion) return new Coleccion($resultado);
@@ -85,7 +77,7 @@ class Conexion {
 			$error = mysql_error();
 			echo $error;
 			$this->errores[] = $error . "\n" . $sql;
-		 	throw new ConexionException(MensajesBD::errorAlEjecutar($error));
+		 	throw new ConexionException($sql . " " . $error);
 		}
 		return;
 	}
@@ -179,14 +171,22 @@ class Conexion {
 		$resultados = $this->consultar($sql);
 		$resultados = $resultados->toArray();
 		if(!is_array($resultados)){
-			throw new SinResultadosException(MensajesBD::errorSinResultados(''));
+			throw new SinResultadosException('');
 		}
 		if(count($resultados) == 0){
-			throw new SinResultadosException(MensajesBD::errorSinResultados(''));
+			throw new SinResultadosException('');
 		}
 
 		return $resultados[0];
 	}
+	
+	public function escape($unescaped){
+		if (!($this->estaAbierta())) {
+			$this->abrir();
+		}
+		
+		return mysql_real_escape_string($unescaped, $this->conn);
+	} 
 }
 
 
@@ -212,7 +212,7 @@ class Coleccion {
 
 	function dameElSiguiente() {
 		if (!$this->tieneSiguiente()){
-			throw new ConexionException(MensajesBD::errorColeccionSinMasElementos());
+			throw new ConexionException('No tiene más elementos');
 		}
 		$retorno = $this->siguiente;
 		$this->siguiente = mysql_fetch_array($this->sqlResult);
@@ -244,5 +244,6 @@ class Coleccion {
 		$this->goToRow($filaActual);
 		return $array;
 	}
+	
 }
 ?>

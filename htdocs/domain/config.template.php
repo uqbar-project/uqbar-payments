@@ -11,3 +11,9 @@ define("GOOGLE_SECRET", "xxxx");
 define("ROOT_URL", "http://local.payments.uqbar.org");
 define("BACK_URL", ROOT_URL."/gracias.php");
 define("GOOGLE_REDIRECT", ROOT_URL."/login.php");
+
+define("SERVIDOR", "localhost");
+define("PUERTO", 3306);
+define("USUARIO", "root");
+define("CLAVE", "root");
+define("DB", "uqbarwik_payments");

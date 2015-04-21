@@ -23,6 +23,27 @@ function checkLogin(){
 		$client->setAccessToken($_SESSION['access_token']);
 		try{
 			$token_data = $client->verifyIdToken()->getAttributes();
+
+			$email = email();
+			
+			$email = str_replace("@", "@", $email);
+			
+			$q = "SELECT * from google_user WHERE email = '$email'";
+			$result = Conexion::conexion()->consultar($q);
+			
+			if(!$result->tieneSiguiente()){
+				$gUser = array();
+			}else{
+				$gUser = $result->dameElSiguiente();
+				
+			}
+			$gUser["email"] = $email;
+			$gUser["displayName"] = displayName();
+			$gUser["userInfo"] = json_encode(userInfo());
+			
+			Conexion::conexion()->guardarArray("google_user", $gUser, "idGoogleUser");
+			$result->liberar();
+			
 		}catch(Google_Auth_Exception $e){
 			logout();
 		}

@@ -52,3 +52,89 @@ URL:	/donar.php
 URL_QUERY:	valor=150
 Unexpected Error: Payer and collector cannot be the same user   
 
+2015-04-21 15:06:48
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:06:59
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:07:24
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:07:37
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:07:48
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:08:39
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 15:08:52
+IP:	127.0.0.1
+URL:	/donar.php
+URL_QUERY:	valor=50
+Unexpected Error: Payer and collector cannot be the same user   
+
+2015-04-21 16:21:45
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	
+2
+
+2015-04-21 16:21:45
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	
+ERRORES DE MYSQL:
+	Field 'topic' doesn't have a default value
+ INSERT INTO ipn_notifications (responseCode,responseJSON) VALUES ("301","null")
+
+2015-04-21 16:22:48
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=preapproval
+Unexpected Error: Method not allowed   
+
+2015-04-21 16:23:25
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=preapproval&id=1
+Unexpected Error: Method not allowed   
+
+2015-04-21 16:24:25
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=preapproval&id=1
+Unexpected Error: Method not allowed   
+
+2015-04-21 16:25:32
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=preapproval&id=1
+2
+
+2015-04-21 16:26:30
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=preapproval&id=1
+2
+

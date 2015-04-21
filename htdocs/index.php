@@ -29,8 +29,6 @@ try{
 	}
 	preg_match("/^(.*\/.*\.php)$/", $redirect, $parts);
 	
-	var_dump($redirect);
-	
 	renderPage("pages$parts[0]");
 } catch (Exception $e) {
 	default_error_handler(E_WARNING, $e->getMessage());
