@@ -1,28 +1,39 @@
-<?php require_once 'includes/util.php';?>
-<?php require 'includes/encabezado.php'?>
-  
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Colaborá con Uqbar</h1>
-        <p>Uqbar es una fundación sin fines de lucro, que tiene como objetivos impulsar el desarrollo de la tecnología, expandir su utilización
-        y ayudar en su difusión.</p> 
-        <p>
-        	Dentro de Uqbar se realizan muchas actividades y proyectos de desarrollo, pero para poder realizar esto necesitamos
-        	de tu colaboración </p>
-        <p><a class="btn btn-primary" href="http://uqbar.org" role="button">Ver más</a></p>
-      </div>
-    </div>
+<?php
+require_once 'includes/util.php';
 
-	<div class="container">
-		<div class="row">
-			<h2>Colaboraciones Mensuales</h2>
-			<p>Tenemos distintas opciones de colaboraciones mensuales con las que
-				nos podes ayudar. Todas expresadas en pesos argentinos, por ahora
-				solo recibimos donaciones dentro de Argentina.</p>
-			<p>Para que puedas realizar la donación debes estar logeado.</p>
-			<p>
-			<?= renderBotonesDonaciones() ?>
-		</div>
-	</div>
-        
-<?php require 'includes/pie.php';?>
+//error handler function
+function default_error_handler($errno = E_USER_ERROR, $errstr = '', $err_file = '', $err_line = ''){
+	loguear("Unexpected Error: $errstr $err_file $err_line ");
+	mostrarError();
+}
+function shutdown_handler(){
+	$error = error_get_last();
+	
+	if($error !== NULL && $error['type'] == E_ERROR){
+		loguear('Unexpected Error: ' . $error['message']);
+		mostrarError();
+	}
+}
+
+session_cache_limiter('private, must-revalidate');
+
+//set error handler
+set_error_handler("default_error_handler", E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
+register_shutdown_function("shutdown_handler");
+
+try{	
+	if(!isset($_SERVER['REDIRECT_URL']) || $_SERVER['REDIRECT_URL'] == ''){
+		$redirect = "/index.php";
+	} else {
+		$redirect = $_SERVER['REDIRECT_URL'];
+	}
+	preg_match("/^(.*\/.*\.php)$/", $redirect, $parts);
+	
+	var_dump($redirect);
+	
+	renderPage("pages$parts[0]");
+} catch (Exception $e) {
+	default_error_handler(E_WARNING, $e->getMessage());
+}
+
+?>

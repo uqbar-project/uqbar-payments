@@ -43,7 +43,7 @@ function doDonar($valor){
 	);
 	
 	$redirect = $mp->create_preapproval_payment ($preapproval_data)['response']['init_point'];
-	return header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+	header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
 function renderBotonesDonaciones(){

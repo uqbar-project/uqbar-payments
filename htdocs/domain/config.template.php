@@ -1,9 +1,13 @@
 <?php
+//// INICIO SECRETO
 define("MP_CLIENT", 1234);
 define("MP_SECRET", "xxxx");
 
-define("BACK_URL", "http://uqbar.org");
-
-define("GOOGLE_ID", "xxxx");
+define("GOOGLE_ID", "1234");
 define("GOOGLE_SECRET", "xxxx");
-define("GOOGLE_REDIRECT", "http://local.payments.uqbar.org/login.php");
+
+//// FIN SECRETO
+
+define("ROOT_URL", "http://local.payments.uqbar.org");
+define("BACK_URL", ROOT_URL."/gracias.php");
+define("GOOGLE_REDIRECT", ROOT_URL."/login.php");

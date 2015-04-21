@@ -1,5 +1,3 @@
-<?php require_once 'includes/util.php';?>
-
 <?php 
 	global $client; 
 	
