@@ -4,11 +4,18 @@ turnNotRender();
 try{
 	$mp = new MP(MP_CLIENT, MP_SECRET);
 	
-	$params = ["access_token" => $mp->get_access_token()];
+	$params = array("access_token" => $mp->get_access_token());
 	$topic = $_REQUEST['topic'];
 	$idOp = $_REQUEST['id'];
 
-	$resp = $mp->get("/$topic/$id", $params);
+	if($topic == "payment"){
+		$url = "/collections/notifications/$idOp";
+	}else{
+		$url = "/$topic/$idOp";
+	}
+	
+	
+	$resp = $mp->get($url, $params);
 	
 	$data = array();
 	$data["topic"] = $topic;
@@ -20,5 +27,5 @@ try{
 }catch(Exception $e){
 	echo $e->getMessage();
 	loguear(E_WARNING, $e->getMessage() . ":" . $e->getTraceAsString());
-	http_response_code(500);
+	header("HTTP/1.0 500 Internal server error");
 }
