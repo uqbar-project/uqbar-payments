@@ -18,6 +18,7 @@ require_once ('lib/Google/autoload.php');
 require_once ('domain/config.php');
 require_once ('domain/user.php');
 require_once ('domain/donaciones.php');
+require_once ('domain/remeras.php');
 
 $render = true;
 

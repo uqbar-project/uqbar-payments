@@ -138,3 +138,127 @@ URL:	/ipn.php
 URL_QUERY:	topic=preapproval&id=1
 2
 
+2015-08-27 17:08:50
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: cURL extension not found. You need to enable cURL in your php.ini or another configuration you have.   
+
+2015-08-27 17:10:49
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: This app cannot do authorized payments   
+
+2015-08-27 17:31:56
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: Access denied for user 'uqbarwik_pays'@'localhost' (using password: YES)   
+
+2015-08-27 17:33:25
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: Access denied for user 'uqbarwik_pays'@'localhost' (using password: YES)   
+
+2015-08-27 17:37:29
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: Access denied for user 'uqbarwik_pays'@'localhost' (using password: YES)   
+
+2015-08-27 17:38:26
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: Access denied for user 'uqbarwik_pays'@'localhost' (using password: YES)   
+
+2015-08-27 17:38:54
+IP:	127.0.0.1
+URL:	/doRemeras.php
+URL_QUERY:	
+Unexpected Error: Access denied for user 'uqbarwik_pays'@'localhost' (using password: YES)   
+
+2015-08-27 17:44:56
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+2
+
+2015-08-27 17:44:56
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+ERRORES DE MYSQL:
+	Field 'date' doesn't have a default value
+ INSERT INTO ipn_notifications (topic,idOperation,responseCode,responseJSON) VALUES ("payment","1197535379","200","{'collection':{'id':1197535379,'site_id':'MLA','date_created':'2015-06-23T00:00:13.000-04:00','date_approved':'2015-06-24T08:01:12.000-04:00','money_release_date':'2015-07-08T08:01:12.000-04:00','last_modified':'2015-06-24T08:01:12.000-04:00','payer':{'id':133445900,'first_name':'Leo','last_name':'Gassman','phone':{'area_code':'11','number':'5348-7632','extension':''},'identification':{'type':null,'number':null},'email':'lgassman@gmail.com','nickname':'LEOGASSMAN'},'order_id':'MEN-200','external_reference':'MEN-200','merchant_order_id':null,'reason':'Donaci\u00f3n Mensual $ 200 a Uqbar Project','currency_id':'ARS','transaction_amount':200,'net_received_amount':188.02,'total_paid_amount':200,'shipping_cost':0,'coupon_amount':0,'coupon_fee':0,'finance_fee':0,'discount_fee':0,'coupon_id':null,'status':'approved','status_detail':'accredited','installments':1,'installment_amount':200,'deferred_period':null,'payment_type':'credit_card','marketplace':'NONE','operation_type':'recurring_payment','transaction_order_id':'null','statement_descriptor':'MERCADOLIBRE','cardholder':{'name':'Leonardo Gassman','identification':{'number':'28478549','type':'DNI'}},'authorization_code':'null','marketplace_fee':0,'refunds':[],'amount_refunded':0,'last_modified_by_admin':null,'collector':{'id':22900075,'first_name':'Pablo','last_name':'Tesone','phone':{'area_code':'011','number':'44325748','extension':''},'email':'pagos@uqbar.org','nickname':'TESONEP'}}}")
+
+2015-08-27 17:45:15
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+2
+
+2015-08-27 17:45:15
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+ERRORES DE MYSQL:
+	Field 'date' doesn't have a default value
+ INSERT INTO ipn_notifications (topic,idOperation,responseCode,responseJSON) VALUES ("payment","1197535379","200","{'collection':{'id':1197535379,'site_id':'MLA','date_created':'2015-06-23T00:00:13.000-04:00','date_approved':'2015-06-24T08:01:12.000-04:00','money_release_date':'2015-07-08T08:01:12.000-04:00','last_modified':'2015-06-24T08:01:12.000-04:00','payer':{'id':133445900,'first_name':'Leo','last_name':'Gassman','phone':{'area_code':'11','number':'5348-7632','extension':''},'identification':{'type':null,'number':null},'email':'lgassman@gmail.com','nickname':'LEOGASSMAN'},'order_id':'MEN-200','external_reference':'MEN-200','merchant_order_id':null,'reason':'Donaci\u00f3n Mensual $ 200 a Uqbar Project','currency_id':'ARS','transaction_amount':200,'net_received_amount':188.02,'total_paid_amount':200,'shipping_cost':0,'coupon_amount':0,'coupon_fee':0,'finance_fee':0,'discount_fee':0,'coupon_id':null,'status':'approved','status_detail':'accredited','installments':1,'installment_amount':200,'deferred_period':null,'payment_type':'credit_card','marketplace':'NONE','operation_type':'recurring_payment','transaction_order_id':'null','statement_descriptor':'MERCADOLIBRE','cardholder':{'name':'Leonardo Gassman','identification':{'number':'28478549','type':'DNI'}},'authorization_code':'null','marketplace_fee':0,'refunds':[],'amount_refunded':0,'last_modified_by_admin':null,'collector':{'id':22900075,'first_name':'Pablo','last_name':'Tesone','phone':{'area_code':'011','number':'44325748','extension':''},'email':'pagos@uqbar.org','nickname':'TESONEP'}}}")
+
+2015-08-27 17:54:27
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+2
+
+2015-08-27 17:54:27
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+ERRORES DE MYSQL:
+	Field 'date' doesn't have a default value
+ INSERT INTO ipn_notifications (topic,idOperation,responseCode,responseJSON) VALUES ("payment","1197535379","200","{'collection':{'id':1197535379,'site_id':'MLA','date_created':'2015-06-23T00:00:13.000-04:00','date_approved':'2015-06-24T08:01:12.000-04:00','money_release_date':'2015-07-08T08:01:12.000-04:00','last_modified':'2015-06-24T08:01:12.000-04:00','payer':{'id':133445900,'first_name':'Leo','last_name':'Gassman','phone':{'area_code':'11','number':'5348-7632','extension':''},'identification':{'type':null,'number':null},'email':'lgassman@gmail.com','nickname':'LEOGASSMAN'},'order_id':'MEN-200','external_reference':'MEN-200','merchant_order_id':null,'reason':'Donaci\u00f3n Mensual $ 200 a Uqbar Project','currency_id':'ARS','transaction_amount':200,'net_received_amount':188.02,'total_paid_amount':200,'shipping_cost':0,'coupon_amount':0,'coupon_fee':0,'finance_fee':0,'discount_fee':0,'coupon_id':null,'status':'approved','status_detail':'accredited','installments':1,'installment_amount':200,'deferred_period':null,'payment_type':'credit_card','marketplace':'NONE','operation_type':'recurring_payment','transaction_order_id':'null','statement_descriptor':'MERCADOLIBRE','cardholder':{'name':'Leonardo Gassman','identification':{'number':'28478549','type':'DNI'}},'authorization_code':'null','marketplace_fee':0,'refunds':[],'amount_refunded':0,'last_modified_by_admin':null,'collector':{'id':22900075,'first_name':'Pablo','last_name':'Tesone','phone':{'area_code':'011','number':'44325748','extension':''},'email':'pagos@uqbar.org','nickname':'TESONEP'}}}")
+
+2015-08-27 17:55:17
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+2
+
+2015-08-27 17:55:17
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+ERRORES DE MYSQL:
+	Field 'date' doesn't have a default value
+ INSERT INTO ipn_notifications (topic,idOperation,responseCode,responseJSON) VALUES ("payment","1197535379","200","{'collection':{'id':1197535379,'site_id':'MLA','date_created':'2015-06-23T00:00:13.000-04:00','date_approved':'2015-06-24T08:01:12.000-04:00','money_release_date':'2015-07-08T08:01:12.000-04:00','last_modified':'2015-06-24T08:01:12.000-04:00','payer':{'id':133445900,'first_name':'Leo','last_name':'Gassman','phone':{'area_code':'11','number':'5348-7632','extension':''},'identification':{'type':null,'number':null},'email':'lgassman@gmail.com','nickname':'LEOGASSMAN'},'order_id':'MEN-200','external_reference':'MEN-200','merchant_order_id':null,'reason':'Donaci\u00f3n Mensual $ 200 a Uqbar Project','currency_id':'ARS','transaction_amount':200,'net_received_amount':188.02,'total_paid_amount':200,'shipping_cost':0,'coupon_amount':0,'coupon_fee':0,'finance_fee':0,'discount_fee':0,'coupon_id':null,'status':'approved','status_detail':'accredited','installments':1,'installment_amount':200,'deferred_period':null,'payment_type':'credit_card','marketplace':'NONE','operation_type':'recurring_payment','transaction_order_id':'null','statement_descriptor':'MERCADOLIBRE','cardholder':{'name':'Leonardo Gassman','identification':{'number':'28478549','type':'DNI'}},'authorization_code':'null','marketplace_fee':0,'refunds':[],'amount_refunded':0,'last_modified_by_admin':null,'collector':{'id':22900075,'first_name':'Pablo','last_name':'Tesone','phone':{'area_code':'011','number':'44325748','extension':''},'email':'pagos@uqbar.org','nickname':'TESONEP'}}}")
+
+2015-08-27 17:56:23
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+2
+
+2015-08-27 17:56:23
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=1197535379
+ERRORES DE MYSQL:
+	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE idRemera = 'MEN-200'' at line 1
+UPDATE remeras SET estado = 'approved', modificado = CURRENT_TIMESTAMP WHERE WHERE idRemera = 'MEN-200'
+
+2015-08-27 17:56:58
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=5
+2
+
+2015-08-27 17:57:33
+IP:	127.0.0.1
+URL:	/ipn.php
+URL_QUERY:	topic=payment&id=5
+2
+

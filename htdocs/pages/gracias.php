@@ -8,7 +8,9 @@
 		</div>
 		<p class="lead text-muted">
 			Muchas gracias por tu contribución, esto nos ayuda mucho para poder seguir adelante con nuestras tareas.
-		<br> <a href="http://uqbar.org" class="btn btn-warning">Volver a Uqbar</a>
+		<br> 
+			<a href="http://uqbar.org" class="btn btn-warning">Volver a Uqbar</a>
+			<a href="http://payments.uqbar.org" class="btn btn-warning">Volver a Donar</a>
 		</p>
 	</div>
 </div>

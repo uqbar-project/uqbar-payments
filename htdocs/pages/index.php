@@ -1,4 +1,8 @@
-    <div class="jumbotron">
+<?php 
+	$_SESSION['login_backUrl'] = '';
+?>
+
+	<div class="jumbotron">
       <div class="container">
         <h1>Colaborá con Uqbar</h1>
         <p>Uqbar es una fundación sin fines de lucro, que tiene como objetivos impulsar el desarrollo de la tecnología, expandir su utilización

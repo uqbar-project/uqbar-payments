@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/payments.css" rel="stylesheet">
   </head>
 
   <body>

@@ -23,7 +23,15 @@ try{
 	$data["responseCode"] = $resp['status'];
 	$data["responseJSON"] = json_encode($resp['response']);
 
+	$r2 = $resp['response'];
+	$col = $r2['collection'];
+	$ref = $col['external_reference'];
+	$estado = $col['status'];
+
+	
 	Conexion::conexion()->guardarArray("ipn_notifications", $data, "idIPNNotification");
+	Conexion::conexion()->newTransaction();
+	Conexion::conexion()->ejecutar("UPDATE remeras SET estado = '$estado', modificado = CURRENT_TIMESTAMP WHERE idRemera = '$ref'");
 }catch(Exception $e){
 	echo $e->getMessage();
 	loguear(E_WARNING, $e->getMessage() . ":" . $e->getTraceAsString());
