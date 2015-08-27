@@ -12,10 +12,10 @@
 
 	<div class="container">
 		<div class="row">
-		<div class="col-md-8">
-			<h1>Si... Remeras!!!</h1>
+		<div class="col-md-6">
+			<h1>Si... Remeras!!! Quiero una!!!!</h1>
 			<div class="col-md-6 contenedorRemera">
-				<p>Nuestro Diseño va a quedar así (o cuando Ariel me pase la imagen definitiva).</p>
+				<p>Nuestro Diseño va a quedar así (so cool!!! Ojo que sube el Coolisterol!!).</p>
 				<img alt="Modelo de la Remera" src="imgs/modeloRemera.jpg"/>
 				<p>
 			</div>
@@ -28,11 +28,26 @@
 				</p>
 			</div>
 		</div>
+		
+			<div class='col-md-3'>
+				<h2>Podes donar para tener tu Remera</h2>
+				<p>
+					Si te convertis en subscriptor de Uqbar, y haces un aporte de forma regular
+					no solo vas a ayudar a tu Fundación favorita, sino que te vas a llevar 
+					una remera para contarselo al mundo. 
+					Una vez que hagas tu donación una hermoso/a telefonista se comunicará 
+					contigo (El teléfono del/la telefonista tambien esta a la venta)
+					
+				</p>
+					<a class='btn btn-primary' href='/'
+							 role='button'>Dona Regularmente!</a>
+			</div>
+				
 	<?php 
 		if(!isLogged()){
 	?>
-			<div class='col-md-4'>
-				<h2>Compra Tu Remera</h2>
+			<div class='col-md-3'>
+				<h2>o Compra Tu Remera</h2>
 				<p>
 					Para poder comprar tu remera tenes que estar logueado con tu cuenta de Google. 
 				</p>
@@ -42,7 +57,7 @@
 	<?php 
 		}else{
 	?>
-			<div class='col-md-4'>
+			<div class='col-md-3'>
 				<h2>Compra Tu Remera</h2>
 				<form action="doRemeras.php" method="post" >
 					<div class="form-group">
